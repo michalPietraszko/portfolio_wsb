@@ -1,0 +1,4 @@
+awslocal s3api create-bucket --bucket bukt
+awslocal s3api put-bucket-policy --bucket bukt --policy file://bucket_policy.json
+awslocal s3 sync ./www s3://bukt/
+awslocal s3 website s3://bukt/ --index-document index.html --error-document error.html
