@@ -1,0 +1,7 @@
+FROM ubuntu:latest AS ubuntu-img
+WORKDIR /django
+ENV PYTHONUNBUFFERED=1
+RUN apt update -y 
+RUN apt install python3 -y
+RUN apt-get install -y python3-pip python-dev build-essential
+RUN python3 -m pip install Django
